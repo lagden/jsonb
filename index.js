@@ -30,8 +30,8 @@ function decompress(base64) {
 			}
 			try {
 				resolve(JSON.parse(buffer.toString('utf8')))
-			} catch (error2) {
-				reject(error2)
+			} catch (error_) {
+				reject(error_)
 			}
 		})
 	})

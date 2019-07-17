@@ -24,6 +24,7 @@ module.exports = {
 		'camelcase': 0,
 		'capitalized-comments': 0,
 		'spaced-comment': 0,
+		'unicorn/prevent-abbreviations': 0,
 		'unicorn/filename-case': 0,
 		'padding-line-between-statements': 0
 	}
