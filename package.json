@@ -1,6 +1,6 @@
 {
   "name": "@tadashi/jsonb",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Compress or decompress JSON",
   "main": "index.js",
   "files": [
@@ -15,19 +15,18 @@
   },
   "keywords": [
     "json",
-    "deflate",
-    "unzip",
+    "brotli",
     "base64"
   ],
   "author": "Thiago Lagden",
   "license": "MIT",
   "engines": {
-    "node": ">=8.9.1"
+    "node": ">=12.0.0"
   },
   "devDependencies": {
-    "ava": "2.2.0",
-    "eslint": "6.0.1",
-    "eslint-config-xo": "0.26.0",
-    "eslint-plugin-unicorn": "9.1.1"
+    "ava": "2.4.0",
+    "eslint": "6.6.0",
+    "eslint-config-xo": "0.27.2",
+    "eslint-plugin-unicorn": "13.0.0"
   }
 }

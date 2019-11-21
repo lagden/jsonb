@@ -1,6 +1,6 @@
 'use strict'
 
-const {deflate, unzip} = require('zlib')
+const {brotliCompress, brotliDecompress} = require('zlib')
 
 function compress(json) {
 	return new Promise((resolve, reject) => {
@@ -10,7 +10,7 @@ function compress(json) {
 			return
 		}
 		const buf = Buffer.from(str, 'utf8')
-		deflate(buf, (err, buffer) => {
+		brotliCompress(buf, (err, buffer) => {
 			if (err) {
 				reject(err)
 				return
@@ -23,7 +23,7 @@ function compress(json) {
 function decompress(base64) {
 	return new Promise((resolve, reject) => {
 		const buf = Buffer.from(base64, 'base64')
-		unzip(buf, (error, buffer) => {
+		brotliDecompress(buf, (error, buffer) => {
 			if (error) {
 				reject(error)
 				return
