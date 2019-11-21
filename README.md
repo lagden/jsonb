@@ -26,13 +26,16 @@ $ npm i -S @tadashi/jsonb
 ## Usage
 
 ```js
-const {compress, decompress} = require('@tadashi/jsonb')
+const {compress, decompress} = require('@tadashi/jsonb');
 
-const c = compress({a: 'foo', b: 'bar'})
-// => 5c48b2d79b156cb4effe05c8
+(async () => {
+  const c = await compress({a: 'foo', b: 'bar'})
+  // => CwqAeyJhIjoiZm9vIiwiYiI6ImJhciJ9Aw==
 
-decompress(c)
-// => {a: 'foo', b: 'bar'}
+  await decompress(c)
+  // => {a: 'foo', b: 'bar'}  
+})()
+
 ```
 
 
