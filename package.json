@@ -1,7 +1,7 @@
 {
   "name": "@tadashi/jsonb",
-  "version": "2.0.0",
-  "description": "Compress or decompress JSON",
+  "version": "3.0.0",
+  "description": "Compress or decompress any data",
   "main": "index.js",
   "files": [
     "LICENSE",
@@ -21,11 +21,14 @@
   "author": "Thiago Lagden",
   "license": "MIT",
   "engines": {
-    "node": ">=12.0.0"
+    "node": ">=10.16.0"
+  },
+  "dependencies": {
+    "devalue": "2.0.0"
   },
   "devDependencies": {
     "ava": "2.4.0",
-    "eslint": "6.6.0",
+    "eslint": "6.7.1",
     "eslint-config-xo": "0.27.2",
     "eslint-plugin-unicorn": "13.0.0"
   }

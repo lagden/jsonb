@@ -1,5 +1,8 @@
 language: node_js
 node_js:
+  - "10.16"
   - "12"
-script: "npm run eslint;npx nyc ava --tap"
-# after_script: "npm i coveralls nyc;npm run report"
+# before_script: "npm i coveralls nyc"
+# script: "npm run eslint;npx nyc ava --tap"
+# after_script: "npm run report"
+script: "npm test"

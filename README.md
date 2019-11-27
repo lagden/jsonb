@@ -14,7 +14,7 @@
 
 -----
 
-Compress or decompress JSON
+Compress or decompress any data
 
 ## Install
 
@@ -30,7 +30,7 @@ const {compress, decompress} = require('@tadashi/jsonb');
 
 (async () => {
   const c = await compress({a: 'foo', b: 'bar'})
-  // => CwqAeyJhIjoiZm9vIiwiYiI6ImJhciJ9Aw==
+  // => CwiAe2E6ImZvbyIsYjoiYmFyIn0D
 
   await decompress(c)
   // => {a: 'foo', b: 'bar'}  

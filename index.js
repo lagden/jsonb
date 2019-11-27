@@ -1,18 +1,16 @@
+/* eslint no-new-func: 0 */
 'use strict'
 
 const {brotliCompress, brotliDecompress} = require('zlib')
+const devalue = require('devalue')
 
-function compress(json) {
+function compress(data) {
 	return new Promise((resolve, reject) => {
-		const str = JSON.stringify(json)
-		if (str === undefined) {
-			reject(new TypeError('Data can\'t be undefined'))
-			return
-		}
+		const str = devalue(data)
 		const buf = Buffer.from(str, 'utf8')
-		brotliCompress(buf, (err, buffer) => {
-			if (err) {
-				reject(err)
+		brotliCompress(buf, (error, buffer) => {
+			if (error) {
+				reject(error)
 				return
 			}
 			resolve(buffer.toString('base64'))
@@ -28,11 +26,8 @@ function decompress(base64) {
 				reject(error)
 				return
 			}
-			try {
-				resolve(JSON.parse(buffer.toString('utf8')))
-			} catch (error_) {
-				reject(error_)
-			}
+			const fn = new Function(`return ${(buffer.toString('utf8'))}`)
+			resolve(fn())
 		})
 	})
 }
