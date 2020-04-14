@@ -1,7 +1,7 @@
 'use strict'
 
-import test from 'ava'
-import {compress, decompress} from '..'
+const test = require('ava')
+const {compress, decompress} = require('..')
 
 test('basic', async t => {
 	const data = {a: 'foo', b: 'bar'}
