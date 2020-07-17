@@ -20,8 +20,8 @@ module.exports = {
 				after: true
 			}
 		],
+		camelcase: 0,
 		'no-console': 0,
-		'camelcase': 0,
 		'capitalized-comments': 0,
 		'spaced-comment': 0,
 		'unicorn/prevent-abbreviations': 0,

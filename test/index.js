@@ -12,7 +12,7 @@ test('basic', async t => {
 })
 
 test('compress invalid', async t => {
-	const error = await t.throwsAsync(compress({[Symbol('test')]: null}))
+	const error = await t.throwsAsync(compress({[Symbol('test')]: undefined}))
 	t.is(error.message, 'Cannot stringify POJOs with symbolic keys')
 })
 
