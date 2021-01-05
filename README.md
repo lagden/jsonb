@@ -32,10 +32,9 @@ const {compress, decompress} = require('@tadashi/jsonb');
   const c = await compress({a: 'foo', b: 'bar'})
   // => CwiAe2E6ImZvbyIsYjoiYmFyIn0D
 
-  await decompress(c)
-  // => {a: 'foo', b: 'bar'}  
+  const d = await decompress(c)
+  console.log(d) // => {a: 'foo', b: 'bar'}
 })()
-
 ```
 
 
