@@ -40,4 +40,4 @@ const {compress, decompress} = require('@tadashi/jsonb');
 
 ## License
 
-MIT © [Thiago Lagden](http://lagden.in)
+MIT © [Thiago Lagden](https://github.com/lagden)
