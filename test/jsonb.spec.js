@@ -1,7 +1,5 @@
-'use strict'
-
-const test = require('ava')
-const {compress, decompress} = require('..')
+import test from 'ava'
+import {compress, decompress} from '../src/jsonb.js'
 
 test('basic', async t => {
 	const data = {a: 'foo', b: 'bar'}

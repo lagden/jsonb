@@ -2,15 +2,16 @@
 
 [![NPM version][npm-img]][npm]
 [![Build Status][ci-img]][ci]
-[![XO code style][xo-img]][xo]
+[![Coverage Status][coveralls-img]][coveralls]
 
 
 [npm-img]:         https://img.shields.io/npm/v/@tadashi/jsonb.svg
 [npm]:             https://www.npmjs.com/package/@tadashi/jsonb
-[ci-img]:          https://travis-ci.org/lagden/jsonb.svg
-[ci]:              https://travis-ci.org/lagden/jsonb
-[xo-img]:          https://img.shields.io/badge/code_style-XO-5ed9c7.svg
-[xo]:              https://github.com/sindresorhus/xo
+[ci-img]:          https://github.com/lagden/jsonb/actions/workflows/nodejs.yml/badge.svg
+[ci]:              https://github.com/lagden/jsonb/actions/workflows/nodejs.yml
+[coveralls-img]:   https://coveralls.io/repos/github/lagden/jsonb/badge.svg?branch=master
+[coveralls]:       https://coveralls.io/github/lagden/jsonb?branch=master
+
 
 -----
 
@@ -26,15 +27,13 @@ $ npm i -S @tadashi/jsonb
 ## Usage
 
 ```js
-const {compress, decompress} = require('@tadashi/jsonb');
+import {compress, decompress} from '@tadashi/jsonb'
 
-(async () => {
-  const c = await compress({a: 'foo', b: 'bar'})
-  // => CwiAe2E6ImZvbyIsYjoiYmFyIn0D
+const c = await compress({a: 'foo', b: 'bar'})
+// => CwiAe2E6ImZvbyIsYjoiYmFyIn0D
 
-  const d = await decompress(c)
-  console.log(d) // => {a: 'foo', b: 'bar'}
-})()
+const d = await decompress(c)
+// => {a: 'foo', b: 'bar'}
 ```
 
 
