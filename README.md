@@ -30,7 +30,7 @@ $ npm i -S @tadashi/jsonb
 import {compress, decompress} from '@tadashi/jsonb'
 
 const c = await compress({a: 'foo', b: 'bar'})
-// => CwiAe2E6ImZvbyIsYjoiYmFyIn0D
+// => Cw2AW3siYSI6MSwiYiI6Mn0sImZvbyIsImJhciJdAw==
 
 const d = await decompress(c)
 // => {a: 'foo', b: 'bar'}

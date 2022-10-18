@@ -1,6 +1,6 @@
 import {promisify} from 'node:util'
 import {brotliCompress, brotliDecompress, constants} from 'node:zlib'
-import devalue from 'devalue'
+import * as devalue from 'devalue'
 
 const brotliCompressPromise = promisify(brotliCompress)
 const brotliDecompressPromise = promisify(brotliDecompress)
@@ -17,7 +17,7 @@ export async function compress(data, options = {}) {
 		encoding = 'utf8',
 		base64 = true,
 	} = options
-	const str = devalue(data)
+	const str = devalue.stringify(data)
 	const buf = Buffer.from(str, encoding)
 	const res = await brotliCompressPromise(buf, {
 		chunkSize: 32 * 1024,
@@ -43,8 +43,9 @@ export async function decompress(data, options = {}) {
 		buf = Buffer.from(data, 'base64')
 	}
 	const res = await brotliDecompressPromise(buf)
-	const fn = new Function(`return ${(res.toString(encoding))}`)
-	return fn()
+	return devalue.parse(res.toString(encoding))
+	// const fn = new Function(`return ${(res.toString(encoding))}`)
+	// return fn()
 }
 
 /**

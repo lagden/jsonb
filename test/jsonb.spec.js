@@ -5,7 +5,7 @@ test('basic', async t => {
 	const data = {a: 'foo', b: 'bar'}
 	const c = await compress(data)
 	const d = await decompress(c)
-	t.is(c, 'CwiAe2E6ImZvbyIsYjoiYmFyIn0D')
+	t.is(c, 'Cw2AW3siYSI6MSwiYiI6Mn0sImZvbyIsImJhciJdAw==')
 	t.is(JSON.stringify(d), JSON.stringify(data))
 })
 
